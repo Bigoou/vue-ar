@@ -1,5 +1,17 @@
+@font-face {
+  font-family: Sofia Pro;
+  src: url('../public/fonts/sofiapro-light.woff2');
+}
+
+@font-face {
+  font-family : Branch;
+  src: url('../public/fonts/Branch.woff2');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Kristi&display=swap');
+
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Sofia Pro, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -70,21 +82,9 @@ button:focus-visible {
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
