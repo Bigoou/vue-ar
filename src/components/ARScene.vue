@@ -173,16 +173,27 @@ export default {
     var mesh;
 
     var loader = new GLTFLoader();
-    loader.load('/models/CanvasMuseum.glb', function (gltf) {
-      gltf.scene.children[0].scale.set(0.3, 0.3, 0.3);
-      console.log(gltf.scene.children[0]);
-      mesh = gltf.scene.children[0];
+    // loader.load('/models/CanvasMuseum.glb', function (gltf) {
+    //   gltf.scene.children[0].scale.set(0.3, 0.3, 0.3);
+    //   console.log(gltf.scene);
+    //   mesh = gltf.scene.children[0];
+    //   console.log(mesh);
+    //   markerScene.add(mesh);
+     
+    // },
+     loader.load('/models/wooden-crate.glb', function (gltf) {
+      // gltf.scene.scale.set(0.3, 0.3, 0.3);
+      console.log(gltf.scene);
+      mesh = gltf.scene;
       console.log(mesh);
       markerScene.add(mesh);
      
-    }, undefined, function (error) {
+    },
+    undefined, function (error) {
       console.error(error);
     });
+    markerScene.rotation.set(5, -5, 0)
+    markerScene.position.set(2, 1, 0)
     console.log(markerScene);
     // markerScene.add(mesh);
       
@@ -444,6 +455,14 @@ h1 {
 
   video {
     z-index : 1 !important
+  }
+
+  /** Get the video on full screen for mobile devices */
+  @media screen and (max-width: 600px) {
+    video {
+      width: 100vw;
+      height: 100vh;
+    }
   }
 
   .title {
